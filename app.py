@@ -13,9 +13,27 @@ spec.register(app)
 
 @app.route('/<tipo>/<quantidade>/')
 def validacao(tipo, quantidade):
+    """
+    Valida o tipo (anos, meses, semanas e dias) para determinar validade a partir da quantidade
+
+    #Endpoint:
+    'GET /<tipo>/<quantidade>/'
+
+    :param tipo: anos, meses, semanas e dias
+    :param quantidade: número de anos, meses, semanas ou dias
+    :return: A data de fabricação em anos, meses, semanas ou dias e determina a validade
+
+    #Resposta:
+    {
+        "Fabricação em": datetime.today().strftime('%d/%m/%Y'),
+        "Validade": validade.strftime('%d/%m/%Y'),
+    }
+
+
+    """
     prazo = int(quantidade)
     meses = datetime.today()+relativedelta(months=prazo)
-    #anos
+    #ano
     anos = datetime.today()+relativedelta(years=prazo)
     #semanas
     semanas = datetime.today()+relativedelta(weeks=prazo)
