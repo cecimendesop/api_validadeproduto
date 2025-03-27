@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="29ecc369-6c29-47bf-930c-06ef02ea1b4b" name="Changes" comment="sgrter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -71,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743078416907</updated>
-      <workItem from="1743078417989" duration="3440000" />
+      <workItem from="1743078417989" duration="4997000" />
     </task>
     <task id="LOCAL-00001" summary="sgrter">
       <option name="closed" value="true" />
@@ -81,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743084594854</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sgrter">
+      <option name="closed" value="true" />
+      <created>1743090127611</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743090127611</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

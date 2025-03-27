@@ -6,10 +6,11 @@ from dateutil.relativedelta import relativedelta
 
 app = Flask(__name__)
 
-spec = FlaskPydanticSpec( 'flask',
-                          title = 'Flask API - SENAI',
-                          version = '1.0.0',)
+spec = FlaskPydanticSpec('flask',
+                         title='Flask API - SENAI',
+                         version='1.0.0', )
 spec.register(app)
+
 
 @app.route('/<tipo>/<quantidade>/')
 def validacao(tipo, quantidade):
@@ -29,32 +30,41 @@ def validacao(tipo, quantidade):
         "Validade": validade.strftime('%d/%m/%Y'),
     }
 
+    #Erros Possíveis:
+    {
+            "erro: inválido"
+        })
 
     """
-    prazo = int(quantidade)
-    meses = datetime.today()+relativedelta(months=prazo)
-    #ano
-    anos = datetime.today()+relativedelta(years=prazo)
-    #semanas
-    semanas = datetime.today()+relativedelta(weeks=prazo)
-    #dias
-    dias = datetime.today()+relativedelta(days=prazo)
-
-    if tipo == 'meses':
-        validade = meses
-    elif tipo == 'anos':
-        validade = anos
-    elif tipo == 'semanas':
-        validade = semanas
-    elif tipo == 'dias':
-        validade = dias
-
-    return jsonify ({
-        "Fabricação em": datetime.today().strftime('%d/%m/%Y'),
-        "Validade": validade.strftime('%d/%m/%Y'),
-    })
 
 
+    try:
+        prazo = int(quantidade)
+        meses = datetime.today() + relativedelta(months=prazo)
+        # ano
+        anos = datetime.today() + relativedelta(years=prazo)
+        # semanas
+        semanas = datetime.today() + relativedelta(weeks=prazo)
+        # dias
+        dias = datetime.today() + relativedelta(days=prazo)
+
+        if tipo == 'meses':
+            validade = meses
+        elif tipo == 'anos':
+            validade = anos
+        elif tipo == 'semanas':
+            validade = semanas
+        elif tipo == 'dias':
+            validade = dias
+
+        return jsonify({
+            "Fabricacao em": datetime.today().strftime('%d/%m/%Y'),
+            "Validade": validade.strftime('%d/%m/%Y'),
+        })
+    except ValueError:
+        return jsonify({
+            "erro: inválido"
+        })
 
 if __name__ == '__main__':
     app.run(debug=True)
